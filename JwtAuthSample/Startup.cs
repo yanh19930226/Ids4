@@ -37,24 +37,30 @@ namespace JwtAuthSample
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(o => {
                 //原始JWt认证授权
-                o.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidAudience = jwtSettings.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
-                };
-                //添加自定义JWT认证授权(自定义Token)
-                //o.SecurityTokenValidators.Clear();
-                //o.SecurityTokenValidators.Add(new MyTokenValidator());
-                //o.Events = new JwtBearerEvents()
+                //o.TokenValidationParameters = new TokenValidationParameters
                 //{
-                //    OnMessageReceived = context =>
-                //    {
-                //        var token = context.Request.Headers["token"];
-                //        context.Token = token.FirstOrDefault();
-                //        return Task.CompletedTask;
-                //    }
+                //    ValidIssuer = jwtSettings.Issuer,
+                //    ValidAudience = jwtSettings.Audience,
+                //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
                 //};
+                //添加自定义JWT认证授权(自定义Token)
+                o.SecurityTokenValidators.Clear();
+                o.SecurityTokenValidators.Add(new MyTokenValidator());
+                o.Events = new JwtBearerEvents()
+                {
+                    OnMessageReceived = context =>
+                    {
+                        var token = context.Request.Headers["token"];
+                        context.Token = token.FirstOrDefault();
+                        return Task.CompletedTask;
+                    }
+                };
+            });
+
+            //基于Policy的授权
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("SuperAdminOnly", policy => policy.RequireClaim("SuperAdminOnly"));
             });
             services.AddControllers();
         }

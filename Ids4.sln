@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcCookieAuthSample", "MvcCookieAuthSample\MvcCookieAuthSample.csproj", "{95D3DC07-665D-4A2A-A955-4B1D0297C117}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcCookieSample", "..\Core-master\Core-master\MvcCookieSample\MvcCookieSample.csproj", "{170D3E02-3457-4520-BA57-25AB973E6C43}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthSample", "JwtAuthSample\JwtAuthSample.csproj", "{C9976D37-5B23-4DA2-887C-4C05B685FD84}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentitySample", "IdentitySample\IdentitySample.csproj", "{12576CC3-031C-474E-887E-91750A703AA7}"
@@ -21,10 +19,6 @@ Global
 		{95D3DC07-665D-4A2A-A955-4B1D0297C117}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D3DC07-665D-4A2A-A955-4B1D0297C117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D3DC07-665D-4A2A-A955-4B1D0297C117}.Release|Any CPU.Build.0 = Release|Any CPU
-		{170D3E02-3457-4520-BA57-25AB973E6C43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{170D3E02-3457-4520-BA57-25AB973E6C43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{170D3E02-3457-4520-BA57-25AB973E6C43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{170D3E02-3457-4520-BA57-25AB973E6C43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9976D37-5B23-4DA2-887C-4C05B685FD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9976D37-5B23-4DA2-887C-4C05B685FD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9976D37-5B23-4DA2-887C-4C05B685FD84}.Release|Any CPU.ActiveCfg = Release|Any CPU

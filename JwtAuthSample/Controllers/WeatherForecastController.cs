@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace JwtAuthSample.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "SuperAdminOnly")]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
